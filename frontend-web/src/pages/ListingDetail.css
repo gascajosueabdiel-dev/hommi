@@ -1,0 +1,219 @@
+/* src/pages/ListingDetail.css — detalle de alojamiento (tema mixto) */
+.detail {
+  background: var(--light-bg);
+  color: var(--light-text);
+  min-height: 70vh;
+  padding: 28px 0 clamp(56px, 8vw, 96px);
+}
+.detail-container {
+  width: 100%;
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+.detail-admin-banner {
+  display: inline-block;
+  margin-bottom: 16px;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.detail-back {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: var(--light-text-muted);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s, transform 0.2s;
+}
+.detail-back:hover { color: var(--color-accent); transform: translateX(-3px); }
+
+/* ───────── Estructura ───────── */
+.detail-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 32px;
+  align-items: start;
+}
+.detail-main { min-width: 0; }
+.detail-side {
+  position: sticky;
+  top: calc(var(--navbar-height) + 20px);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ───────── Encabezado ───────── */
+.detail-header { margin-top: 28px; }
+.detail-title {
+  margin-top: 12px;
+  font-size: clamp(26px, 3.6vw, 38px);
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  overflow-wrap: anywhere;
+}
+.detail-location {
+  margin-top: 8px;
+  font-size: 16px;
+  color: var(--light-text-muted);
+}
+
+.detail-badge {
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.detail-badge--ok   { background: #dcfce7; color: #166534; }
+.detail-badge--busy { background: #fee2e2; color: #991b1b; }
+.detail-badge--warn { background: #fef3c7; color: #92400e; }
+
+/* ───────── Secciones ───────── */
+.detail-section {
+  margin-top: 24px;
+  padding: 28px;
+  background: var(--light-surface);
+  border: 1px solid var(--light-border);
+  border-radius: 20px;
+}
+.detail-section h2 { font-size: 18px; margin-bottom: 14px; }
+.detail-description {
+  color: var(--light-text-muted);
+  line-height: 1.7;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+.detail-muted { color: var(--light-text-muted); font-size: 14px; }
+
+.detail-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+}
+.detail-tags li {
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.detail-map {
+  aspect-ratio: 16 / 9;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #e6eaf3;
+}
+.detail-map iframe { width: 100%; height: 100%; border: 0; display: block; }
+.detail-map-nota { margin-top: 10px; font-size: 13px; }
+.detail-maplink {
+  display: inline-block;
+  margin-top: 12px;
+  color: var(--color-accent);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.detail-maplink:hover { text-decoration: underline; }
+
+/* ───────── Tarjetas laterales ───────── */
+.detail-card {
+  padding: 24px;
+  background: var(--light-surface);
+  border: 1px solid var(--light-border);
+  border-radius: 20px;
+  box-shadow: var(--shadow-card);
+}
+.detail-card-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 8px;
+}
+.detail-price { font-size: 34px; font-weight: 700; letter-spacing: -0.02em; }
+.detail-price span { font-size: 15px; font-weight: 500; color: var(--light-text-muted); }
+
+.detail-actions { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
+
+.detail-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 20px;
+  border-radius: var(--radius-pill);
+  border: 1px solid transparent;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+.detail-btn:hover { transform: translateY(-2px); }
+.detail-btn--primary { background: var(--color-accent); color: #fff; box-shadow: 0 8px 20px rgba(37, 99, 235, 0.28); }
+.detail-btn--wa      { background: #128c4a; color: #fff; }
+.detail-btn--ghost   { background: transparent; color: var(--light-text); border-color: rgba(18, 24, 43, 0.22); }
+.detail-btn--ghost:hover { background: rgba(18, 24, 43, 0.05); }
+
+.detail-owner { display: flex; align-items: center; gap: 16px; }
+.detail-owner-role {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+.detail-owner-name { font-size: 18px; font-weight: 600; margin-top: 2px; overflow-wrap: anywhere; }
+.detail-verified {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  background: #dcfce7;
+  color: #166534;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* ───────── Avisos (invitado / error) ───────── */
+.detail-notice {
+  max-width: 520px;
+  margin: 40px auto;
+  padding: 40px 32px;
+  text-align: center;
+  background: var(--light-surface);
+  border: 1px solid var(--light-border);
+  border-radius: 24px;
+  box-shadow: var(--shadow-card);
+}
+.detail-notice-icon { font-size: 40px; margin-bottom: 12px; }
+.detail-notice h1 { font-size: 24px; margin-bottom: 10px; }
+.detail-notice p { color: var(--light-text-muted); line-height: 1.6; margin-bottom: 24px; }
+.detail-notice-actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+
+/* ───────── Tablet y móvil ───────── */
+@media (max-width: 960px) {
+  .detail-grid { grid-template-columns: minmax(0, 1fr); }
+  .detail-side { position: static; order: -1; }   /* precio y contacto antes de la galería */
+}
+@media (max-width: 720px) {
+  .detail-container { padding: 0 var(--space-4); }
+  .detail-section { padding: 22px 18px; }
+  .detail-price { font-size: 30px; }
+  .detail-notice { padding: 32px 20px; }
+}

@@ -1,0 +1,81 @@
+/* src/components/PhotoUploader.css */
+.pu { border-radius: 16px; transition: background 0.2s, outline-color 0.2s; outline: 2px dashed transparent; outline-offset: 6px; }
+.pu--arrastrando { background: var(--color-accent-soft); outline-color: var(--color-accent); }
+
+.pu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 12px;
+  list-style: none;
+}
+
+.pu-item {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #e6eaf3;
+  border: 1px solid var(--light-border);
+}
+.pu-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.pu-principal {
+  position: absolute;
+  left: 8px;
+  bottom: 8px;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  background: var(--color-accent);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.pu-acciones {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  display: flex;
+  gap: 6px;
+}
+.pu-acciones button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(11, 16, 32, 0.72);
+  color: #fff;
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+.pu-acciones button:hover:not(:disabled) { background: var(--color-accent); transform: scale(1.08); }
+.pu-acciones button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.pu-agregar { aspect-ratio: 4 / 3; }
+.pu-drop {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  border: 2px dashed rgba(18, 24, 43, 0.25);
+  border-radius: 14px;
+  background: var(--light-surface);
+  color: var(--light-text);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s, color 0.2s;
+}
+.pu-drop small { font-size: 12px; font-weight: 500; color: var(--light-text-muted); }
+.pu-drop-icono { font-size: 26px; line-height: 1; color: var(--color-accent); }
+.pu-drop:hover:not(:disabled) { border-color: var(--color-accent); background: var(--color-accent-soft); }
+.pu-drop:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.pu-ayuda { margin-top: 12px; font-size: 13px; line-height: 1.5; color: var(--light-text-muted); }

@@ -1,0 +1,15 @@
+/* src/components/LoadingSpinner.css */
+.loading-spinner-wrap {
+  display: flex; align-items: center; gap: 12px;
+  color: rgba(255,255,255,0.5);
+  padding: 60px 0; justify-content: center;
+}
+.loading-spinner {
+  display: inline-block;
+  width: 18px; height: 18px;
+  border: 2px solid var(--color-border-strong);
+  border-top-color: var(--color-text);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }

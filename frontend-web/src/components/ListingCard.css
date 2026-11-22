@@ -1,0 +1,139 @@
+/* src/components/ListingCard.css — tarjeta pensada para fondos claros */
+.listing-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--light-surface);
+  border: 1px solid var(--light-border);
+  border-radius: 18px;
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--light-text);
+  box-shadow: var(--shadow-card);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.listing-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.listing-card-media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  background: #e6eaf3;
+  overflow: hidden;
+}
+.listing-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.listing-card:hover .listing-card-media img { transform: scale(1.05); }
+
+.listing-card-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(18, 24, 43, 0.25);
+  background: linear-gradient(135deg, #e9eefb, #dfe6f5);
+}
+
+.listing-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.listing-badge--ok   { background: #dcfce7; color: #166534; }
+.listing-badge--busy { background: #fee2e2; color: #991b1b; }
+.listing-badge--warn { background: #fef3c7; color: #92400e; }
+
+.listing-card-count {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  background: rgba(11, 16, 32, 0.7);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.listing-card-body { padding: 18px 20px 20px; }
+
+.listing-card-price {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.listing-card-price span {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--light-text-muted);
+}
+
+.listing-card-rating {
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.listing-card-rating span { color: #f59e0b; }
+.listing-card-rating small { margin-left: 6px; font-size: 12.5px; font-weight: 500; color: var(--light-text-muted); }
+.listing-card-title {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.35;
+  margin-bottom: 4px;
+  overflow-wrap: anywhere;
+}
+.listing-card-colonia {
+  font-size: 14px;
+  color: var(--light-text-muted);
+  margin-bottom: 14px;
+}
+
+.listing-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+}
+.listing-card-tags li {
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+  font-size: 12px;
+  font-weight: 600;
+}
+.listing-card-tags .listing-card-tags-extra {
+  background: #eceff6;
+  color: var(--light-text-muted);
+}
+
+/* Carga (esqueleto) */
+.listing-card--skeleton { pointer-events: none; box-shadow: none; }
+.listing-card--skeleton .listing-card-media,
+.skeleton-line {
+  background: linear-gradient(90deg, #e6eaf3 25%, #f1f4fa 50%, #e6eaf3 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s linear infinite;
+}
+.skeleton-line {
+  height: 14px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  width: 80%;
+}
+.skeleton-line--lg { height: 24px; width: 45%; }
+.skeleton-line--sm { width: 55%; margin-bottom: 0; }
+@keyframes shimmer { to { background-position: -200% 0; } }

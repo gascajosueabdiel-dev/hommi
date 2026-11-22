@@ -1,0 +1,19 @@
+/* src/components/SuccessScreen.css */
+.success-screen {
+  text-align: center;
+  padding: 20px 0;
+}
+.success-screen-icon {
+  width: 60px; height: 60px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 26px; color: #4ade80;
+}
+.success-screen-titulo { color: #fff; font-size: 18px; margin-bottom: 8px; }
+.success-screen-sub    { color: rgba(255,255,255,0.4); font-size: 14px; margin-bottom: 20px; }
+.success-screen-bar    { height: 3px; background: rgba(255,255,255,0.1); border-radius: 2px; overflow: hidden; }
+.success-screen-fill   { height: 100%; width: 0%; background: #4ade80; animation: progress 2.5s linear forwards; }
+@keyframes progress    { to { width: 100%; } }

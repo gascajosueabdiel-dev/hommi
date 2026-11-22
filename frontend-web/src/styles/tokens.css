@@ -1,0 +1,68 @@
+/* src/styles/tokens.css
+   Variables de diseño de HOMMI. Los valores coinciden con los colores que ya
+   usaba la app, así que adoptarlas no cambia el aspecto: solo centraliza dónde
+   se definen. Para cambiar la identidad visual, se edita aquí. */
+:root {
+  /* Fuente */
+  --font-sans: 'DM Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  /* Superficies */
+  --color-bg:        #0f1117;
+  --color-surface:   #1a1d27;
+  --color-surface-2: #1e2230;
+  --color-overlay:   rgba(0, 0, 0, 0.8);
+
+  /* Bordes */
+  --color-border:        rgba(255, 255, 255, 0.08);
+  --color-border-strong: rgba(255, 255, 255, 0.15);
+  --color-field:         rgba(255, 255, 255, 0.05);
+  --color-field-border:  rgba(255, 255, 255, 0.1);
+
+  /* Texto */
+  --color-text:        #ffffff;
+  --color-text-muted:  rgba(255, 255, 255, 0.6);
+  --color-text-subtle: rgba(255, 255, 255, 0.4);
+
+  /* Acentos */
+  --color-primary:      #4f8ef7;
+  --color-primary-alt:  #7c3aed;
+  --color-link:         #60a5fa;
+  --color-success:      #4ade80;
+  --color-danger:       #f87171;
+  --color-danger-strong:#ef4444;
+  --color-warning:      #fde68a;
+
+  /* Botón principal (blanco sobre fondo oscuro) */
+  --color-btn:      #ffffff;
+  --color-btn-text: #0f1117;
+
+  /* Formas y espacios */
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 16px;
+  --radius-pill: 999px;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+
+  /* ── Secciones claras (tema mixto) ── */
+  --light-bg:          #f4f6fb;
+  --light-surface:     #ffffff;
+  --light-text:        #12182b;
+  --light-text-muted:  #5b6478;
+  --light-border:      rgba(18, 24, 43, 0.10);
+  --color-accent:      #2563eb;               /* azul HOMMI para botones sobre fondo claro */
+  --color-accent-soft: rgba(37, 99, 235, 0.10);
+  --shadow-card:       0 10px 30px rgba(18, 24, 43, 0.08);
+  --shadow-card-hover: 0 18px 40px rgba(18, 24, 43, 0.16);
+
+  /* Layout */
+  --navbar-height: 60px;
+  --content-max:   1280px;
+}
